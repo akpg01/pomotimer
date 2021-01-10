@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/pomo.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <title>PomoTimer</title>
+</head>
+
+<body>
+<h1>Pomodoro Timer</h1>
+    <div id="pomoTimer-app" style="display:none;">
+        <button id="pomo-settings">Settings</button>
+        <div id="pom-container">
+            <div id="timer">
+                <div id="time">
+                    <p id="status">Back to Work!</p>
+                    <span id="mins">25</span>
+                    <span id="colon">:</span>
+                    <span id="secs">00</span>
+                </div>
+                <div id="filler"></div>
+            </div>
+        </div>
+        <div id="pom_icons">
+
+        </div>
+    </div>
+    <div id="clickHere">
+        <button id="pomButton">Launch Timer</button>
+    </div>
+    <div id="settings-dialog" title="Settings" style="display: none;">
+        <audio id="pop">
+        <source src="audio/short_sms.mp3" type="audio/mpeg"> Your browser does not support the
+        <code>audio</code> tag.
+        </audio>
+        <table id="settings">
+            <tr>
+                <td><label for="duration">Pomodoro duration: </label></td>
+                <td><input type="number" id="duration" min="1" max="90" step="1" name="duration" value="25" style="width: 50px"></td>
+            </tr>
+            <tr>
+                <td><label for="break">Break: </label></td>
+                <td><input type="number" id="break" min="1" max="90" name="break" value="5" style="width: 50px"></td>
+            </tr>
+            <tr>
+                <td><label for="long_break">Long break: </label></td>
+                <td><input type="number" id="long_break" min="1" max="100" name="long_break" value="15" style="width: 50px"></td>
+            </tr>
+            <tr>
+                <td><label for="sound">Select sound: </label></td>
+                <td>
+                    <select name="playlist" id="playlist">
+                    <option value="audio/alarm_clock.mp3">Alarm clock</option>
+                    <option value="audio/high_beep.mp3">High beep</option>
+                    <option value="audio/loud_beep.mp3">Loud beep</option>
+                    <option value="audio/MusicBox.mp3">Music Box</option>
+                    <option value="audio/short_sms.mp3" selected="selected">Short SMS</option>
+                    <option value="audio/simple_beep.mp3">Simple beep</option>
+                    <option value="audio/soft_beep.mp3">Soft beep</option>
+                    <option value="audio/victory_sms.mp3">Victory SMS</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="volume">Select volume: </label></td>
+                <td>
+                    <select name="vol" id="vol">
+                    <option value="0">Mute</option>
+                    <option value="5">5%</option>
+                    <option value="10">10%</option>
+                    <option value="15">15%</option>
+                    <option value="20">20%</option>
+                    <option selected="selected" value="25">25%</option>
+                    <option value="50">50%</option>
+                    <option value="75">75%</option>
+                    <option value="100">100%</option>
+                </select>
+                </td>
+            </tr>
+        </table>
+        <!--<button id="test_sound">Sound Test</button>-->
+    </div>
+     <div id="steps">
+        <ol class="custom-counter">
+            <li>Choose a task to be accomplished. </li>
+            <li>Set the Pomodoro timer (25-minutes).</li>
+            <li>Work on the task until the timer rings.</li>
+            <li>Take a short break (5-minutes)</li>
+            <li>After 4 Pomodoros, take a long break (15-minutes)</li>
+        </ol>
+    </div>
+    <div id="para" class="span-2-of-3">
+        <p>The Pomodoro Technique was invented in the early 90s by developer, entrepeneur, and author Francesco Cirillo. He named the system "Pomodoro" after a tomato-shaped timer he used to track his work during his time as university student. Click
+            <a href="https://francescocirillo.com/pages/pomodoro-technique" target="_blank">here</a> to learn more about Francesco Cirillo and the Pomodoro Technique!
+        </p>
+    </div>
+</body>
+<footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/pomo.js"></script>
+</footer>
+
+</html>

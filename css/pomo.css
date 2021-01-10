@@ -1,0 +1,304 @@
+body {
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("/img/pomodoro.png");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("/img/pomodoro.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-attachment: fixed;
+    counter-reset: item;
+    margin: 5%;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+#clickHere {
+    text-align: center;
+}
+
+#pomButton {
+    color: blue;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#steps {
+    margin: 20px auto;
+    width: 36%;
+    padding: 10px;
+}
+
+#para {
+    margin: 15%;
+    margin-top: 5%;
+    color: rgb(44, 42, 42);
+    font-weight: 300;
+}
+
+.custom-counter {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.custom-counter li {
+    counter-increment: step-counter;
+    margin-bottom: 5px;
+    color: rgb(44, 42, 42);
+    font-weight: 400;
+}
+
+.custom-counter li::before {
+    content: counter(step-counter);
+    margin-right: 20px;
+    font-size: 80%;
+    background-color: rgb(44, 42, 42);
+    color: white;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 11px;
+}
+
+li {
+    margin: 15px 0;
+    line-height: 160%;
+}
+
+
+/*----------Pomodoro--------------------*/
+
+#pom-container {
+    border: 2px solid #ff9933;
+    border-radius: 20px;
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    background: #333333;
+}
+
+#timer {
+    color: #f00;
+    font-size: 35px;
+    margin: 10px auto;
+    border: 5px solid red;
+    border-radius: 60%;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: default;
+}
+
+#time {
+    margin-top: 40px;
+    z-index: 1;
+    position: relative;
+}
+
+#time p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #ff9933;
+}
+
+#filler {
+    background: #fff2e6;
+    height: 0px;
+    width: 200px;
+    position: absolute;
+    bottom: 0;
+}
+
+#pom_icons {
+    text-align: center;
+    margin-right: 1px;
+}
+
+#pom_icons img {
+    width: 20px;
+    height: 20px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    margin-right: 1px;
+}
+
+#pom_icons .completed {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+#check {
+    left: 12em;
+    position: absolute;
+    width: 11px !important;
+    height: 10px !important;
+    margin-top: 8px;
+    margin-left: 1px;
+    filter: brightness(1)invert(1) !important;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    text-align: center;
+    float: none !important;
+}
+
+button.start-green {
+    background: green;
+    color: black;
+    font-weight: bold;
+}
+
+button#pomo-settings {
+    -moz-user-select: text;
+    background: none;
+    border: none;
+    color: #ff9933;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+button#pomo-settings:hover,
+button#pomo-settings:focus span {
+    text-decoration: underline;
+}
+
+button#ok-settings {
+    border-color: #009900;
+    color: green;
+    font-weight: bold;
+}
+
+button#cancel-settings {
+    border-color: #ff9800;
+    color: orange;
+    font-weight: bold;
+}
+
+button#cancel-settings:hover,
+button#cancel-settings:focus {
+    background: #ffa500;
+    color: black;
+}
+
+button.start-green:hover,
+button.start-green:focus {
+    background: #00b300;
+    color: black;
+    font-weight: bold;
+}
+
+button#default-settings {
+    border-color: #999999;
+    color: #595959;
+    font-weight: bold;
+}
+
+button#default-settings:hover,
+button#default-settings:focus {
+    background: #b3b3b3;
+    color: black;
+    font-weight: bold;
+}
+
+button#sound-settings {
+    border-color: #2196F3;
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+button#sound-settings:hover,
+button#sound-settings:focus {
+    background: #6eb9f7;
+    color: black;
+    font-weight: bold;
+}
+
+button#ok-settings:hover,
+button#ok-settings:focus {
+    background: #00b300;
+    color: black;
+    font-weight: bold;
+}
+
+button.pause-yellow {
+    background: yellow;
+    color: black;
+    font-weight: bold;
+}
+
+button.pause-yellow:hover,
+button.pause-yellow:focus {
+    background: #ffff80;
+    color: black;
+    font-weight: bold;
+}
+
+button.stop-red {
+    background: red;
+    color: black;
+    font-weight: bold;
+}
+
+button.stop-red:hover,
+button.stop-red:focus {
+    background: #ff4d4d;
+    color: black;
+    font-weight: bold;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a {
+    color: #e67e22;
+}
+
+.ui-state-active button.stop-red {
+    background: #ff4d4d;
+    color: black;
+    font-weight: bold;
+}
+
+#settings {
+    border-spacing: 45px 0px;
+    border-collapse: separate;
+    font-size: 15px;
+    text-align: right;
+}
+
+#settings td {
+    padding-right: 7px;
+    padding-bottom: 7px;
+}
+
+p#reset-para {
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+
+p#reset-para span {
+    font-weight: bold;
+}
+
+@media(max-width: 880px) {
+    #para {
+        margin-left: 22%;
+    }
+}
